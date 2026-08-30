@@ -78,7 +78,7 @@ def send_signed_tx(tx_data, event_prefix, current_epoch):
 
     signed = w3.eth.account.sign_transaction(tx_data, PRIVATE_KEY)
 
-    # ⏱️ CRONÓMETRO INICIA
+    # CRONÓMETRO INICIA
     t_inicio = time.time()
     log_event(current_epoch, f"{event_prefix}_BROADCAST")
     tx_hash = w3.eth.send_raw_transaction(signed.raw_transaction)
